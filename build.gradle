@@ -15,6 +15,8 @@ dependencies {
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
+    annotationProcessor("io.micronaut.tracing:micronaut-tracing-opentelemetry-annotation")
+
     implementation("io.micronaut.data:micronaut-data-jdbc")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
@@ -23,6 +25,11 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.h2database:h2")
     testImplementation("io.micronaut:micronaut-http-client")
+
+    implementation("io.opentelemetry:opentelemetry-exporter-otlp")
+    implementation("io.opentelemetry:opentelemetry-sdk-extension-aws:1.19.0")
+    implementation("io.micronaut.tracing:micronaut-tracing-opentelemetry-http")
+    implementation('io.micronaut.tracing:micronaut-tracing-opentelemetry-jdbc:6.9.0')
 }
 
 
